@@ -1,0 +1,55 @@
+{% extends 'edit1.html' %}
+{% block content %}
+{% endblock %}
+{% block code %}
+{% endblock %}
+{% block edit %}
+<section>
+<div>
+<div>
+<div>
+<div class="container">
+    <div class="row justify-content-center">
+    <div class="col-md-8">
+     <div class="card">
+       <h2 class="card-title text-center">Register here </h2>
+        <div class="card-body py-md-4">
+            {% for i in edit %}
+         <form action="{% url 'update' i.id %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+            <div class="form-group">
+               <input type="text" class="form-control"  name="aname" id="name"  value="{{i.aname}}">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control"  name="gender" id="gender"  value="{{i.gender}}">
+       </div>
+          <div class="form-group">
+               <input type="email" class="form-control" name="email" id="email" value="{{i.email}}">
+            </div>
+     <div class="form-group">
+       <input type="number" class="form-control"  name="phone_no" id="name" value="{{i.phone_no}}">
+         </div>   
+  <div class="form-group">
+    <div class="d-flex flex-row align-items-center justify-content-between">
+    <textarea name="about" id="about"  cols="120" rows="10">{{i.about}}</textarea>
+  </div>
+</div>                  
+     <div class="form-group">
+       <input type="file" class="form-control" id="image" name="image" value="{{i.image}}">
+     </div>
+     <div class="d-flex flex-row align-items-center justify-content-between">
+        <!-- <a href="#">Login</a> -->
+           <button class="btn btn-primary">Submit</button>
+            </div>
+         </form>
+         {% endfor %}
+       </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</section><br><br>
+{% endblock %}

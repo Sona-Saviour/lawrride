@@ -1,0 +1,22 @@
+{% extends 'profile.html' %}
+{% load static %}
+{% block code %}
+{% endblock %}
+{% block profile %}
+    <div class="col">
+        <div class="card-subject__body">
+            <h3>Book Appointment</h3>
+            {% for i in ad %}
+            <form action="{% url 'booking' i.id %}" method="post">
+                {% csrf_token %}
+            name: <input type="text" name="uname" value="{{uname}}" required><br><br>
+            email: <input type="email" id="uemail" name="uemail" value="{{uemail}}" required><br><br>
+            advocate: <input type="text" id="aname" name="aname" value="{{i.aname}}" required><br><br>
+            Date and Time: <input type="datetime-local" id="date_time" name="date_time" required><br><br>
+            <button style="background-color: aquamarine;" type="submit" class="btn btn-primary">Book Appointment</button>
+            </form>
+            {% endfor %}
+            
+        </div>
+        </div>
+{% endblock %}

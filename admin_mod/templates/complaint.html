@@ -1,0 +1,22 @@
+{% extends 'comp.html' %}
+{% load static %}
+{% block code %}
+{% endblock %}
+{% block profile %}
+
+    <div class="col">
+        <div class="card-subject__body">
+            <h3>Complaints</h3>
+            <form action="{% url 'comtable' %}" method="post">
+                {% csrf_token %}
+               name: <input type="text" name="uname" value="{{uname}}" required><br><br>
+               email: <input type="email" name="uemail" value="{{uemail}}" required><br><br>
+               subject: <input type="text" name="subject"><br><br>
+               message:<br> <textarea name="message" id="complaint" cols="80" rows="10"></textarea><br><br>
+               <button style="background-color: rgb(65, 79, 179);" type="submit" class="btn btn-primary">complaint</button>
+
+            </form>
+            
+        </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'profile.html' %}
+{% load static %}
+{% block code %}
+{% endblock %}
+{% block profile %}
+<section class="section-margin">
+
+{% for i in d %}
+        <div class="col">
+            <div class="card-subject__body">
+          
+              <img class="" src="{{i.image.url}}" width="300px" height="300px">
+              
+                <img src="{% static 'img/home/hover-icon.png' %}" alt=""><br><br>
+        
+              <h3>{{i.aname}}</h3>
+              <p>{{i.email}}</p>
+              <p>{{i.about}}</p>
+              <p>phone_no:{{i.phone_no}}</p>
+              <a style="background-color: aquamarine;" href="{% url 'app' i.id %}" class="btn btn-primary">Appointment</a>
+            </div>
+          
+        </div>
+      {% endfor %}
+   
+</section>
+{% endblock %}

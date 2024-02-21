@@ -1,0 +1,56 @@
+
+{% extends 'admin.html' %}
+{% load static %}
+{% block dashboard %}
+{% endblock %}
+{% block example %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block code %}
+<div class="content-wrapper">
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><b>APPOINTMENTS</b></h3>
+            </div>
+            <!-- /.card-header-->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  
+                  <th>username</th>
+                  <th>user_email</th>
+                  <th>subject</th>
+                  <th>message</th>
+                  
+                </tr>
+                </thead>
+                
+                    {% for i in c %}
+                    <tr>
+                    
+                    <td>{{i.cname}}</td>
+                    <td>{{i.cemail}}</td>
+                    <td>{{i.subject}}</td>
+                    <td>{{i.message}}</td>
+                    <!-- <td>{{i.status}}
+                     <td><a href="{% url 'approve' i.id %}"><button>accept</button></a></td>
+                    <td><a href="{% url 'reject' i.id %}"><button>reject</button></a></td> -->
+                    <!-- <td><a href=""><button>edit</button></a></td>
+                    <td><a href=""><button>delete</button></a></td> -->
+                    </tr>
+                    {% endfor %}
+                 
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+</div>
+{% endblock %}
